@@ -1,7 +1,0 @@
-# Configurazione Marp
-inputDir: .
-themeSet:
-  - template/themes/master.scss
-  - template/themes/alma.scss
-html: true
-allowLocalFiles: true

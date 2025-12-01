@@ -1,38 +1,78 @@
-# Marp Presentation Template
+# Marp Template
 
-Template professionale e autocontenuto per creare presentazioni con [Marp](https://marp.app/).
+Risorse condivise (temi, font, utilities) per creare presentazioni con [Marp](https://marp.app/).
 
-## ✨ Features
+**Questo è un modulo da importare.** Per un progetto completo pronto all'uso, vedi [marp-slides-starter](https://github.com/danielefadda/marp-slides-starter).
 
-- 🎨 **2 Temi personalizzati** (Master blue/red, Alma yellow/black)
-- 🔤 **Font professionali** (IBM Plex Sans/Mono, Sofia Sans)
-- 📊 **Chart Vega-Lite** interattivi con fallback PDF
-- 📐 **Layout flessibili** (colonne, cover, chapter, all-image)
-- 📝 **Esempio completo** con 30+ slide demo
-
-## 🚀 Quick Start
-
-### Prova il template
-
-1. Installa [Marp for VS Code](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode)
-2. Apri `esempio.md` in VS Code
-3. Premi **Cmd/Ctrl + K, V** per l'anteprima Marp
-
-### Usa in un nuovo progetto
-
-Consulta **[QUICKSTART.md](QUICKSTART.md)** per istruzioni su come:
-- Importare il template come Git submodule
-- Configurare VS Code
-- Creare la tua prima presentazione
-
-## 📁 Struttura
+## 📁 Contenuto
 
 ```
 template/
-├── themes/           # Temi SCSS (master, alma)
-├── assets/fonts/     # IBM Plex Sans/Mono, Sofia Sans
-├── js/               # vega-insert-chart.js
-└── README.md         # Docs del template
+├── themes/           # Temi Marp in formato SCSS
+│   ├── master.scss   # Tema principale (blu/rosso, IBM Plex)
+│   └── alma.scss     # Tema alternativo (giallo/nero)
+├── assets/
+│   ├── fonts/        # Font personalizzati (IBM Plex Sans/Mono, Sofia Sans)
+│   ├── logos/        # Loghi per le presentazioni
+│   └── backgrounds/  # Sfondi personalizzati
+└── js/
+    └── vega-insert-chart.js  # Utility per chart Vega-Lite
+```
+
+## 🚀 Utilizzo
+
+### Metodo Consigliato: Usa marp-slides-starter
+
+Il modo più semplice per iniziare è usare il progetto template completo:
+
+```bash
+git clone --recurse-submodules https://github.com/danielefadda/marp-slides-starter.git mio-progetto
+cd mio-progetto
+```
+
+### Metodo Avanzato: Import manuale
+
+Se vuoi aggiungere questo template a un progetto esistente:
+
+**Git Submodule** (ricevi aggiornamenti):
+```bash
+cd tuo-progetto
+git submodule add https://github.com/danielefadda/marp-template.git template
+```
+
+**Copia diretta** (nessun aggiornamento):
+```bash
+cp -r /path/to/marp-template ./template
+```
+
+## 📝 Configurazione
+
+### VS Code Settings
+
+Crea `.vscode/settings.json` nel tuo progetto:
+
+```json
+{
+  "markdown.marp.themes": [
+    "${workspaceFolder}/template/themes/master.scss",
+    "${workspaceFolder}/template/themes/alma.scss"
+  ],
+  "markdown.marp.html": "all",
+  "markdown.marp.outlineExtension": true
+}
+```
+
+### File .marprc.yml (opzionale)
+
+Per export da CLI:
+
+```yaml
+inputDir: .
+themeSet:
+  - template/themes/master.scss
+  - template/themes/alma.scss
+html: true
+allowLocalFiles: true
 ```
 
 ## 🎨 Temi Disponibili
@@ -47,10 +87,10 @@ template/
 - **Font**: Sofia Sans
 - **Stile**: Moderno, vivace
 
-## 📐 Classi Slide
+## 📐 Classi Principali
 
-| Classe | Uso |
-|--------|-----|
+| Classe | Descrizione |
+|--------|-------------|
 | `.cover` | Copertina a 2 colonne |
 | `.chapter` | Separatore capitolo |
 | `.title-slide` | Titolo centrato full-screen |
@@ -58,29 +98,9 @@ template/
 | `.columns-2/3/4` | Layout a colonne |
 | `.small-text` | Testo ridotto |
 
-## 📝 Esempio Minimo
-
-```markdown
----
-marp: true
-theme: master
-header: "Corso XYZ"
-footer: "Lezione 01"
-paginate: true
----
-
-<!-- _class: cover -->
-
-# Titolo Presentazione
-
----
-
-# Prima Slide
-
-Contenuto...
-```
-
 ## 📊 Chart Vega-Lite
+
+### Setup
 
 Aggiungi gli script nel frontmatter:
 
@@ -91,53 +111,126 @@ Aggiungi gli script nel frontmatter:
 <script src="template/js/vega-insert-chart.js"></script>
 ```
 
-Poi inserisci il chart:
+### Inserire un chart
 
 ```markdown
-<div class="interactive-chart" id="chart1"></div>
+# Slide con Chart
+
+<div class="interactive-chart" id="my-chart"></div>
 <div class="img-chart">
-  <img src="chart-fallback.png" alt=""/>
+  <img src="charts/my-chart-fallback.png" alt="Chart fallback"/>
 </div>
 
 <script>
-  insertChart('chart1', './charts/spec.json', '100%', '400px');
+  insertChart('my-chart', './charts/my-spec.json', '100%', '450px');
 </script>
 ```
 
-## 🔧 Compilazione
+## 🎯 Esempi di Layout
 
-### Da VS Code
-1. Apri file `.md`
-2. **Cmd/Ctrl + K, V** per anteprima
-3. Click **Export** per PDF/HTML
+### Layout a due colonne
 
-### Da CLI
-```bash
-# HTML
-npx @marp-team/marp-cli slides.md -o output.html
+```markdown
+<div class="columns-2">
 
-# PDF
-npx @marp-team/marp-cli slides.md -o output.pdf --allow-local-files
+<div>
+
+**Colonna sinistra**
+- Punto 1
+- Punto 2
+
+</div>
+
+<div>
+
+**Colonna destra**
+- Punto A
+- Punto B
+
+</div>
+
+</div>
 ```
 
-## 🎯 Tips
+### Slide capitolo
 
-- Usa virgolette doppie `"` per apostrofi nel footer: `footer: "Lezione d'uso"`
-- Ricarica VS Code dopo modifiche al tema: **Cmd+Shift+P** → "Reload Window"
-- Testa sempre l'export PDF prima di condividere
+```markdown
+<!-- _class: chapter -->
+<!-- _paginate: skip -->
 
-## 📚 Documentazione
+# Nome del Capitolo
 
-- **[QUICKSTART.md](QUICKSTART.md)** - Setup e primi passi
-- **[esempio.md](esempio.md)** - Esempi completi (30+ slide)
-- **[template/README.md](template/README.md)** - Dettagli tecnici del template
+<div class="cover-image">
+  <img src="image.png" alt=""/>
+</div>
+```
 
-## 📄 Licenza & Crediti
+### Evidenziare testo
 
-**MIT License** - Libero per uso personale e commerciale
+```markdown
+Questo è un testo con una parola <mark>evidenziata</mark>.
+```
 
-Creato da **Daniele Fadda** per il corso Data Visualization and Visual Analytics.
+## 🔧 Personalizzazione
+
+### Modificare i colori
+
+Edita le variabili CSS in `themes/master.scss` o `themes/alma.scss`:
+
+```scss
+:root {
+  --vamain: #11296b;    // Colore principale
+  --vamain2: #de1f36;   // Colore secondario
+  --vablack: #000000;
+  --vawhite: #ffffff;
+  --vagrey: #6B6B6B;
+}
+```
+
+### Aggiungere un nuovo tema
+
+1. Crea un nuovo file SCSS in `themes/`
+2. Segui la struttura dei temi esistenti
+3. Importa il tema base: `@import 'default';`
+4. Aggiungi il percorso in `.vscode/settings.json`
+
+### Aggiungere font personalizzati
+
+1. Copia i font in `assets/fonts/NomeFont/`
+2. Dichiara i font nel tema SCSS:
+
+```scss
+@font-face {
+  font-family: 'Nome Font';
+  src: url('../assets/fonts/NomeFont/file.ttf');
+}
+
+section {
+  font-family: 'Nome Font', sans-serif !important;
+}
+```
+
+## 🔄 Aggiornamenti
+
+Per aggiornare il template in un progetto che lo usa come submodule:
+
+```bash
+git submodule update --remote template
+git add template
+git commit -m "Update template"
+```
+
+## 📚 Risorse
+
+- **[marp-slides-starter](https://github.com/danielefadda/marp-slides-starter)** - Progetto completo pronto all'uso
+- [Documentazione Marp](https://marpit.marp.app/)
+- [Vega-Lite Documentation](https://vega.github.io/vega-lite/)
+
+## 📄 Licenza
+
+MIT License
 
 ---
 
-**[Marp](https://marp.app/)** • **[Vega-Lite](https://vega.github.io/vega-lite/)** • **[IBM Plex](https://www.ibm.com/plex/)**
+**Versione:** 2.0.0  
+**Ultimo aggiornamento:** Dicembre 2025
