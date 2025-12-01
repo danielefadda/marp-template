@@ -1,125 +1,79 @@
 # Marp Template
 
-Template autocontenuto per creare presentazioni con [Marp](https://marp.app/). Questo template include temi personalizzati, font e utilities per l'integrazione di chart Vega-Lite.
+Risorse condivise (temi, font, utilities) per creare presentazioni con [Marp](https://marp.app/).
 
-## 📁 Struttura
+**Questo è un modulo da importare.** Per un progetto completo pronto all'uso, vedi [marp-slides-starter](https://github.com/danielefadda/marp-slides-starter).
+
+## 📁 Contenuto
 
 ```
-marp-template/
+template/
 ├── themes/           # Temi Marp in formato SCSS
 │   ├── master.scss   # Tema principale (blu/rosso, IBM Plex)
 │   └── alma.scss     # Tema alternativo (giallo/nero)
 ├── assets/
-│   ├── fonts/        # Font personalizzati (IBM Plex Sans/Mono)
+│   ├── fonts/        # Font personalizzati (IBM Plex Sans/Mono, Sofia Sans)
 │   ├── logos/        # Loghi per le presentazioni
 │   └── backgrounds/  # Sfondi personalizzati
-├── js/
-│   └── vega-insert-chart.js  # Utility per inserire chart Vega-Lite
-└── README.md         # Questa documentazione
+└── js/
+    └── vega-insert-chart.js  # Utility per chart Vega-Lite
 ```
 
-## 🚀 Installazione
+## 🚀 Utilizzo
 
-### Opzione 1: Copia locale nel progetto
+### Metodo Consigliato: Usa marp-slides-starter
 
-Copia la cartella `marp-template` nel tuo progetto:
+Il modo più semplice per iniziare è usare il progetto template completo:
 
 ```bash
-cp -r /path/to/marp-template ./marp-template
+git clone --recurse-submodules https://github.com/danielefadda/marp-slides-starter.git mio-progetto
+cd mio-progetto
 ```
 
-### Opzione 2: Git Submodule (aggiornamento automatico)
+### Metodo Avanzato: Import manuale
 
-Aggiungi come submodule per ricevere automaticamente gli aggiornamenti:
+Se vuoi aggiungere questo template a un progetto esistente:
 
+**Git Submodule** (ricevi aggiornamenti):
 ```bash
-git submodule add https://github.com/your-repo/marp-template.git marp-template
-git submodule update --init --recursive
+cd tuo-progetto
+git submodule add https://github.com/danielefadda/marp-template.git template
 ```
 
-Per aggiornare il template in futuro:
-
+**Copia diretta** (nessun aggiornamento):
 ```bash
-git submodule update --remote marp-template
+cp -r /path/to/marp-template ./template
 ```
 
-### Opzione 3: Symlink (sviluppo locale)
+## 📝 Configurazione
 
-Crea un symlink per condividere il template tra più progetti:
+### VS Code Settings
 
-```bash
-ln -s /path/to/marp-template ./marp-template
-```
-
-## 📝 Utilizzo Base
-
-### 1. Creare una nuova presentazione
-
-Crea un file markdown (es. `slides.md`) nella root del tuo progetto:
-
-```markdown
----
-marp: true
-theme: master
-header: 'Titolo Corso'
-footer: 'Nome Presentazione <mark>ACRONIMO</mark>'
-paginate: true
----
-
-<!-- _class: cover -->
-<!-- _paginate: skip -->
-
-<div>
-  <h1>Titolo della Presentazione</h1>
-  <h2>Sottotitolo</h2>
-
-  <div class="authors">
-    <div class="author-label">docente</div>
-    <div class="author-name">Nome Cognome</div>
-  </div>
-
-  <div class="university">
-    <strong>Università</strong><br>
-    Dipartimento<br>
-    Anno Accademico: 2025    
-  </div>
-</div>
-
-<div class="cover-image">
-  <img src="path/to/logo.png" alt="" style="width:90%">
-</div>
-
----
-
-# Seconda Slide
-
-Contenuto della slide...
-```
-
-### 2. Configurare Marp
-
-Crea o aggiorna `.vscode/settings.json`:
+Crea `.vscode/settings.json` nel tuo progetto:
 
 ```json
 {
   "markdown.marp.themes": [
-    "./marp-template/themes/master.scss",
-    "./marp-template/themes/alma.scss"
+    "${workspaceFolder}/template/themes/master.scss",
+    "${workspaceFolder}/template/themes/alma.scss"
   ],
-  "markdown.marp.enableHtml": true
+  "markdown.marp.html": "all",
+  "markdown.marp.outlineExtension": true
 }
 ```
 
-### 3. Compilare le presentazioni
+### File .marprc.yml (opzionale)
 
-Puoi usare:
+Per export da CLI:
 
-- **VS Code Extension**: Installa [Marp for VS Code](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode)
-- **CLI**: 
-  ```bash
-  npx @marp-team/marp-cli slides.md -o output.html
-  npx @marp-team/marp-cli slides.md -o output.pdf
-  ```
+```yaml
+inputDir: .
+themeSet:
+  - template/themes/master.scss
+  - template/themes/alma.scss
+html: true
+allowLocalFiles: true
+```
 
 ## 🎨 Temi Disponibili
 
@@ -157,7 +111,7 @@ theme: master
 <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
-<script src="marp-template/js/vega-insert-chart.js"></script>
+<script src="template/js/vega-insert-chart.js"></script>
 ```
 
 ### Inserire un chart
@@ -286,20 +240,27 @@ section {
 - [Vega-Lite Documentation](https://vega.github.io/vega-lite/)
 - [Markdown Guide](https://www.markdownguide.org/)
 
-## 🤝 Contribuire
+## 🔄 Aggiornamenti
 
-Per migliorare questo template:
+Per aggiornare il template in un progetto che lo usa come submodule:
 
-1. Fai le modifiche necessarie
-2. Testa su diversi browser e in esportazione PDF
-3. Documenta le nuove feature in questo README
-4. Commit e push delle modifiche
+```bash
+git submodule update --remote template
+git add template
+git commit -m "Update template"
+```
+
+## 📚 Risorse
+
+- **[marp-slides-starter](https://github.com/danielefadda/marp-slides-starter)** - Progetto completo pronto all'uso
+- [Documentazione Marp](https://marpit.marp.app/)
+- [Vega-Lite Documentation](https://vega.github.io/vega-lite/)
 
 ## 📄 Licenza
 
-Questo template è distribuito sotto licenza MIT.
+MIT License
 
 ---
 
-**Versione:** 1.0.0  
+**Versione:** 2.0.0  
 **Ultimo aggiornamento:** Dicembre 2025
