@@ -9,7 +9,7 @@
 ```bash
 cd tuo-progetto
 git init
-git submodule add https://github.com/danielefadda/DVVA_Master.git marp-template
+git submodule add https://github.com/danielefadda/marp-template.git marp-template
 git submodule update --init
 ```
 
