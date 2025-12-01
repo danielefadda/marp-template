@@ -10,7 +10,7 @@ paginate: true
 <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
-<script src="marp-template/js/vega-insert-chart.js"></script>
+<script src="template/js/vega-insert-chart.js"></script>
 
 
 <!-- _class: cover -->

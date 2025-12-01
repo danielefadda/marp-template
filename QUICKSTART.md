@@ -9,14 +9,14 @@
 ```bash
 cd tuo-progetto
 git init
-git submodule add https://github.com/danielefadda/marp-template.git marp-template
+git submodule add https://github.com/danielefadda/marp-template.git template
 git submodule update --init
 ```
 
 **Metodo Copia Diretta** (semplice - nessun aggiornamento):
 
 ```bash
-cp -r /path/to/marp-template ./marp-template
+cp -r /path/to/marp-template ./template
 ```
 
 ### 2. Configura VS Code
@@ -26,8 +26,8 @@ Installa [Marp for VS Code](https://marketplace.visualstudio.com/items?itemName=
 ```json
 {
   "markdown.marp.themes": [
-    "${workspaceFolder}/marp-template/themes/master.scss",
-    "${workspaceFolder}/marp-template/themes/alma.scss"
+    "${workspaceFolder}/template/themes/master.scss",
+    "${workspaceFolder}/template/themes/alma.scss"
   ],
   "markdown.marp.html": "all",
   "markdown.marp.outlineExtension": true
@@ -77,7 +77,7 @@ Aggiungi script nel frontmatter:
 <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
-<script src="marp-template/js/vega-insert-chart.js"></script>
+<script src="template/js/vega-insert-chart.js"></script>
 ```
 
 Poi nella slide:
@@ -133,13 +133,13 @@ footer: 'Lezione d\'uso' # ❌ Errore
 
 - Vedi **[esempio.md](esempio.md)** per 30+ slide demo
 - Leggi **[README.md](README.md)** per panoramica completa
-- Consulta **[marp-template/README.md](marp-template/README.md)** per dettagli tecnici
+- Consulta **[template/README.md](template/README.md)** per dettagli tecnici del template
 
 ## 🔄 Aggiornare Template (Git Submodule)
 
 ```bash
-git submodule update --remote marp-template
-git add marp-template
+git submodule update --remote template
+git add template
 git commit -m "Update template"
 ```
 

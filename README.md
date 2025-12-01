@@ -28,7 +28,7 @@ Consulta **[QUICKSTART.md](QUICKSTART.md)** per istruzioni su come:
 ## 📁 Struttura
 
 ```
-marp-template/
+template/
 ├── themes/           # Temi SCSS (master, alma)
 ├── assets/fonts/     # IBM Plex Sans/Mono, Sofia Sans
 ├── js/               # vega-insert-chart.js
@@ -88,7 +88,7 @@ Aggiungi gli script nel frontmatter:
 <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
-<script src="marp-template/js/vega-insert-chart.js"></script>
+<script src="template/js/vega-insert-chart.js"></script>
 ```
 
 Poi inserisci il chart:
@@ -130,7 +130,7 @@ npx @marp-team/marp-cli slides.md -o output.pdf --allow-local-files
 
 - **[QUICKSTART.md](QUICKSTART.md)** - Setup e primi passi
 - **[esempio.md](esempio.md)** - Esempi completi (30+ slide)
-- **[marp-template/README.md](marp-template/README.md)** - Dettagli tecnici
+- **[template/README.md](template/README.md)** - Dettagli tecnici del template
 
 ## 📄 Licenza & Crediti
 
