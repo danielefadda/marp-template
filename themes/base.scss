@@ -32,7 +32,7 @@ code {
 
 /* Custom styles for basic tags */
 hr {
-  border-top: 1px solid var(--vamain2);
+  border-top: 1px solid var(--color-accent);
   background-color: transparent;
 }
 
@@ -42,7 +42,7 @@ hr {
 /** Page numbers **/
 section::after {
   font-size: 1.2rem;
-  color: var(--vagrey);
+  color: var(--color-grey);
   position: absolute;
   padding-left: inherit;
   left: 0;
@@ -67,11 +67,11 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 2rem !important;
   line-height: 2.5rem !important;
-  color: var(--vamain2) !important;
+  color: var(--color-accent) !important;
 }
 
 a {
-  color: var(--vablack) !important;
+  color: var(--color-black) !important;
   text-decoration: underline;
 }
 
@@ -90,7 +90,7 @@ p {
 
 .caption {
   font-size: 0.8em;
-  color: var(--vagrey);
+  color: var(--color-grey);
   line-height: 0.6rem !important;
   font-style: italic !important;
 }
@@ -98,7 +98,7 @@ p {
 
 /** Font colors **/
 h2, h3, h4, h5 {
-  color: var(--vamain) !important;
+  color: var(--color-primary) !important;
   font-weight: bold;
 }
 
@@ -110,8 +110,8 @@ code {
 
 
 mark {
-  background-color: var(--vamain2);
-  color: var(--vawhite);
+  background-color: var(--color-accent);
+  color: var(--color-white);
   padding: 0.2rem 0.3rem 0.1rem 0.3rem;
 }
 
@@ -121,7 +121,7 @@ mark {
 
 
 header {
-  color: var(--vawhite);
+  color: var(--color-white);
   font-size: 0.8rem;
   padding-left: 3rem;
   padding-right: 3rem;
@@ -130,7 +130,7 @@ header {
   top: 0;
   width: 100%;
   height: 5%;
-  background-color: var(--vamain);
+  background-color: var(--color-primary);
 }
 
 /**** Footer ****/
@@ -140,11 +140,11 @@ footer {
   left: auto;
   position: absolute;
   padding-left: inherit;
-  color: var(--vablack);
+  color: var(--color-black);
 }
 
 footer :link {
-  color: var(--vablack);
+  color: var(--color-black);
 }
 
 
@@ -240,7 +240,7 @@ section.cover {
 }
 
 section.chapter {
-  background-color: var(--vamain);
+  background-color: var(--color-primary);
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2rem;
@@ -256,14 +256,14 @@ section.chapter {
     text-transform: uppercase;
     font-size: 2.7rem;
     color:white !important;
-    border-bottom: 3px solid var(--vawhite);
+    border-bottom: 3px solid var(--color-white);
   }
 
   h2 {
     text-transform: uppercase;
     font-size: 2.7rem;
     color:white !important;
-    border-bottom: 3px solid var(--vawhite);
+    border-bottom: 3px solid var(--color-white);
   }
 
   .subtitle {
@@ -311,7 +311,7 @@ section.columns-4 {
 
 /****Titolo di sezione ****/
 section.title-slide h1 {
-  color: var(--vawhite) !important;
+  color: var(--color-white) !important;
 
 }
 
@@ -325,13 +325,13 @@ section.title-slide {
 }
 
 section.title-slide h1 {
-  color: var(--vawhite) !important;
+  color: var(--color-white) !important;
   font-size: 3.5rem !important;
   line-height: 4rem;
   text-align: center;
   margin: 0;
   padding: 2rem;
-  background-color: var(--vamain);
+  background-color: var(--color-primary);
   width: auto;
   border-radius: 0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -347,7 +347,7 @@ section.title-slide header {
 
 section.all-image {
   h1 {
-    color: var(--vawhite) !important;
+    color: var(--color-white) !important;
     font-size: 2rem !important;
     line-height: 2.2rem;
     text-align: left;
@@ -356,7 +356,7 @@ section.all-image {
     padding-right: 1rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    background-color: var(--vamain);
+    background-color: var(--color-primary);
     width:fit-content;
     border-radius: 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -366,7 +366,7 @@ section.all-image {
   }
 
   h2 {
-    color: var(--vawhite) !important;
+    color: var(--color-white) !important;
     font-size: 1.2rem !important;
     line-height: 2rem;
     text-align: left;
@@ -375,7 +375,7 @@ section.all-image {
     padding-right: 1rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    background-color: var(--vamain);
+    background-color: var(--color-primary);
     width:fit-content;
     border-radius: 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -384,7 +384,7 @@ section.all-image {
     left: 0;
   }
   a {
-    color: var(--vawhite) !important;
+    color: var(--color-white) !important;
     text-decoration: underline;
   }
 
@@ -402,7 +402,7 @@ section.all-image::after {
 
 section.all-image {
   h1 {
-    color: var(--vawhite) !important;
+    color: var(--color-white) !important;
     font-size: 2rem !important;
     line-height: 2.2rem;
     text-align: left;
@@ -411,7 +411,7 @@ section.all-image {
     padding-right: 1rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    background-color: var(--vamain);
+    background-color: var(--color-primary);
     width:fit-content;
     border-radius: 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -421,7 +421,7 @@ section.all-image {
   }
 
   h2 {
-    color: var(--vawhite) !important;
+    color: var(--color-white) !important;
     font-size: 1.2rem !important;
     line-height: 2rem;
     text-align: left;
@@ -430,7 +430,7 @@ section.all-image {
     padding-right: 1rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    background-color: var(--vamain);
+    background-color: var(--color-primary);
     width:fit-content;
     border-radius: 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -439,7 +439,7 @@ section.all-image {
     left: 0;
   }
   a {
-    color: var(--vawhite) !important;
+    color: var(--color-white) !important;
     text-decoration: underline;
   }
 
@@ -456,7 +456,7 @@ section.all-image::after {
 
 section.all-image-right {
   h1 {
-    color: var(--vawhite) !important;
+    color: var(--color-white) !important;
     font-size: 2rem !important;
     line-height: 2.2rem;
     text-align: left;
@@ -465,7 +465,7 @@ section.all-image-right {
     padding-right: 3rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    background-color: var(--vamain);
+    background-color: var(--color-primary);
     width:fit-content;
     border-radius: 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -475,7 +475,7 @@ section.all-image-right {
   }
 
   h2 {
-    color: var(--vawhite) !important;
+    color: var(--color-white) !important;
     font-size: 1.2rem !important;
     line-height: 2rem;
     text-align: left;
@@ -484,7 +484,7 @@ section.all-image-right {
     padding-right: 1rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    background-color: var(--vamain);
+    background-color: var(--color-primary);
     width:fit-content;
     border-radius: 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -493,7 +493,7 @@ section.all-image-right {
     left: 0;
   }
   a {
-    color: var(--vawhite) !important;
+    color: var(--color-white) !important;
     text-decoration: underline;
   }
 
