@@ -29,7 +29,8 @@ Installa [Marp for VS Code](https://marketplace.visualstudio.com/items?itemName=
     "${workspaceFolder}/marp-template/themes/master.scss",
     "${workspaceFolder}/marp-template/themes/alma.scss"
   ],
-  "markdown.marp.enableHtml": true
+  "markdown.marp.html": "all",
+  "markdown.marp.outlineExtension": true
 }
 ```
 
