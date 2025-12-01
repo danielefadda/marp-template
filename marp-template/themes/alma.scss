@@ -1,0 +1,182 @@
+/* @theme alma */
+
+@import 'default';
+
+:root {
+    --xaiyellow: #f4dd4d;
+    --xaiblack: #000000;
+    --xaiwhite: #ffffff;
+    --xaigrey: #929597;
+    --xailightgrey: #dedede;
+    
+    --xaiblue: #a6b1cf;
+    --xaiazure: #bfe2e0;
+    --xaigreen: #d0deaa;
+    --xaiamber: #e9dec0;
+    --xaipink: #fbdad3;
+    font-size: 25px;
+    line-height: 1.4rem;
+    
+  }
+  
+  
+  /* Background */
+  section {
+    background-color: var(--xaiwhite) !important;
+  }
+  
+  a {
+    color: var(--xaiblack) !important;
+    text-decoration: underline;
+  }
+  
+  /*****************/
+  /***** Fonts *****/
+  /*****************/
+  * {
+    font-family: 'Poppins' !important;
+  }
+  
+  p {
+    font-size: 1rem !important;
+  }
+  
+  
+  /** Font colors **/
+  h1, h2, h3, h4, h5 {
+    color: var(--xaiblack) !important;
+    font-weight: bold;
+  }
+  
+  /* Page number */
+  section::after {
+    font-size:1.2rem;
+    color: var(--xaigrey);
+  }
+  
+  code {
+   line-height: 1.5rem !important;
+   font-size: 1rem !important;
+  }
+  
+  
+  /****************/
+  /**** Header ****/
+  /****************/
+
+
+header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height:3rem;
+  background-color: var(--xaiyellow);
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  white-space: nowrap
+}
+
+/* Stile per il testo nell'header */
+header .text {
+  color: var(--xaiblack);
+  font-size: 1rem;
+  margin:1rem 0rem 1rem 3rem;
+}
+
+/* Stile per l'immagine nell'header */
+header img {
+  height: 1.5rem;
+  object-fit: contain;
+  margin:1rem 2.3rem 1rem 0;
+
+}
+  
+  /****************/
+  /**** Footer ****/
+  /****************/
+  footer {
+    position: absolute;
+    left: 0;
+    bottom:0;
+    width: 100%;
+    border-top:1px solid var(--xaiblack);
+    padding: 20px 0 20px 75px;
+    background-color: var(--xaiyellow);
+    color: var(--xaiblack);
+  }
+  
+  footer :link {
+    color: var(--xaiblack);
+  }
+  
+  /* Page numbers */
+  section::after {
+    text-shadow: none;
+    color: var(--xaiblack);
+  }
+  section::after {
+    font-family: 'Poppins Light';
+    content: attr(data-marpit-pagination) ' of ' attr(data-marpit-pagination-total);
+    padding-right: 20px;
+  }
+  
+  
+  /***************/
+  /** Templates **/
+  /***************/
+  
+  /* one VS other */
+  .ui.segment.VS .ui.vertical.divider.vs {
+    /* background: var(--xaiblack); */
+    color: var(--xaiyellow) !important;
+  
+    font-weight: bold !important;
+    font-size: 2rem !important;
+  }
+  
+  /* VS background */
+  .ui.segment.VS > div.grid > div.column:nth-child(1) {
+    border-right: 30px solid var(--xaiblack);
+  }
+  .ui.segment.VS > div.grid > div.column:nth-child(2) {
+    border-left: 30px solid var(--xaiblack);
+  }
+
+
+  .columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  .small-text {
+    font-size: 0.75em !important;
+  }
+  .caption {
+    font-size: 0.6em;
+    color: #666;
+  }
+
+  .border-color  {
+    border: 5px solid var(--xaiyellow);
+    padding: 1rem;
+  }
+  .bg-color  {
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: var(--xaiyellow);
+  }
+
+  mark {
+    background-color: var(--xaiyellow);
+    color: var(--xaiblack);
+    padding: 0.1rem 0.5rem;
+  }
+
+  .section-title {
+    background-color: var(--xaiyellow);
+    width: fit-content;;
+    padding: 0 20px;
+    margin-top: 250px !important;
+  }

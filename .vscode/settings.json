@@ -1,0 +1,10 @@
+{
+  "markdown.marp.themes": [
+    "${workspaceFolder}/marp-template/themes/master.scss",
+    "${workspaceFolder}/marp-template/themes/alma.scss",
+    "./marp-template/themes/alma.scss",
+    "./marp-template/themes/master.scss"
+  ],
+  "markdown.marp.html": "all",
+  "markdown.marp.outlineExtension": true
+}

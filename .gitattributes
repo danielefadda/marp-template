@@ -1,0 +1,40 @@
+# Git attributes for Marp Template
+
+# Normalize line endings
+* text=auto eol=lf
+
+# Markdown files
+*.md text
+
+# SCSS/CSS files
+*.scss text
+*.css text
+
+# JavaScript files
+*.js text
+
+# JSON files
+*.json text
+
+# Font files (binary)
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary
+
+# Image files (binary)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.svg binary
+*.ico binary
+
+# Archive files
+*.zip binary
+*.tar.gz binary
+
+# Linguist overrides (for GitHub language detection)
+marp-template/themes/*.scss linguist-language=SCSS
+esempio.md linguist-language=Markdown linguist-documentation=false
+*.md linguist-detectable=true

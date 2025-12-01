@@ -1,0 +1,51 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
+.idea/
+
+# remove all .idea folders
+**/.idea/
+
+# remove all node_modules
+**/node_modules/
+
+# Covers Visual Studio Code IDE
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+# OS generated files
+.DS_Store
+**/.DS_Store
+
+**/export/
+
+# Ignore esempio outputs
+/esempio.pdf
+/esempio.html
+
+# Ignore any slide outputs
+*.pdf
+*.html
+!marp-template/
+
+# Ignore all files in .ipynb_checkpoints folders
+**/.ipynb_checkpoints/*
+
+# Keep vscode folder for marp configuration
+# .vscode/ is now part of the template setup

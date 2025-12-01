@@ -1,0 +1,15 @@
+{
+  "allowLocalFiles": true,
+  "html": true,
+  "inputDir": ".",
+  "output": "./export",
+  "themeSet": [
+    "themes/master.scss",
+    "themes/alma.scss"
+  ],
+  "options": {
+    "markdown": {
+      "breaks": false
+    }
+  }
+}

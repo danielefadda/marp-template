@@ -1,0 +1,597 @@
+/* @theme master */
+
+@import 'default';
+
+
+:root {
+  --vamain: #1b1464;
+  --vamain2: #de1f36;
+  --vablack: #000000;
+  --vawhite: #ffffff;
+  --vagrey: #6B6B6B;
+  --valightgrey: #dedede;
+
+  font-size: 24px; /*  font-size: 35px; for slides with bigger fonts or 24 for normal one */
+  line-height: 1.4rem;
+}
+
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  src: url('../assets/fonts/IBM_Plex_Sans/IBMPlexSans-VariableFont_wdth,wght.ttf');
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: italic;
+  src: url('../assets/fonts/IBM_Plex_Sans/IBMPlexSans-Italic-VariableFont_wdth,wght.ttf');
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  src: url('../assets/fonts/IBM_Plex_Mono/IBMPlexMono-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../assets/fonts/IBM_Plex_Mono/IBMPlexMono-Bold.ttf');
+}
+
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
+
+
+
+section {
+  font-family: 'IBM Plex Sans', sans-serif !important;
+}
+
+code {
+  font-family: 'IBM Plex Mono';
+}
+
+/* Custom styles for basic tags */
+hr {
+  border-top: 1px solid var(--vamain2);
+  background-color: transparent;
+}
+
+
+
+
+/** Page numbers **/
+section::after {
+  font-size: 1.2rem;
+  color: var(--vagrey);
+  position: absolute;
+  padding-left: inherit;
+  left: 0;
+  content: attr(data-marpit-pagination) ' / ' attr(data-marpit-pagination-total);
+}
+
+/* Main content (section) */
+section {
+  margin: 0;
+  padding: 100px 7%;
+  background-size: contain;
+  align-content: normal;
+}
+
+/*****************/
+/***** Fonts *****/
+/*****************/
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'IBM Plex Sans', sans-serif !important;
+}
+
+h1 {
+  font-size: 2rem !important;
+  line-height: 2.5rem !important;
+  color: var(--vamain2) !important;
+}
+
+a {
+  color: var(--vablack) !important;
+  text-decoration: underline;
+}
+
+p {
+  font-size: 1rem !important;
+}
+
+.small-text {
+  font-size: 0.75em !important; 
+}
+
+.small-text td{
+  padding-top:0;
+  padding-bottom:0;
+}
+
+.caption {
+  font-size: 0.8em;
+  color: var(--vagrey);
+  line-height: 0.6rem !important;
+  font-style: italic !important;
+}
+
+
+/** Font colors **/
+h2, h3, h4, h5 {
+  color: var(--vamain) !important;
+  font-weight: bold;
+}
+
+
+code {
+  line-height: 1.5rem !important;
+  font-size: 1rem !important;
+}
+
+
+mark {
+  background-color: var(--vamain2);
+  color: var(--vawhite);
+  padding: 0.2rem 0.3rem 0.1rem 0.3rem;
+}
+
+/****************/
+/**** Header ****/
+/****************/
+
+
+header {
+  color: var(--vawhite);
+  font-size: 0.8rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 5%;
+  background-color: var(--vamain);
+}
+
+/**** Footer ****/
+
+footer {
+  right: 1rem;
+  left: auto;
+  position: absolute;
+  padding-left: inherit;
+  color: var(--vablack);
+  mark {
+    padding: 0.1rem 0 0.1rem 0.3rem;
+  }
+}
+
+footer :link {
+  color: var(--vablack);
+}
+
+
+/* Nascondi il numero di pagina nelle slide di sezione */
+section.title-slide::after {
+  display: none;
+}
+
+/***** Layout columns *****/
+
+.columns-1 {
+  column-count: 1;
+  padding-right: 25%;
+}
+
+.columns-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 0;
+
+  &.c25-c75 {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+  }
+}
+
+.columns-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 0;
+}
+
+.columns-4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 0;
+}
+
+section.cover {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  
+  footer {
+    display: none;
+  }
+
+  h1 {
+    text-transform: uppercase;
+    font-size: 2.7rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .authors {
+    margin-top: 2rem;
+    font-size: 1rem;
+    line-height: 1;
+
+    .author-label {
+      text-transform: uppercase;
+      font-size: 0.6rem;
+      font-weight: bold;
+    }
+
+    .author-name {
+      font-weight: bold;
+    }
+
+    .supervisor-label {
+      text-transform: uppercase;
+      font-size: 0.6rem;
+      margin-top: 1rem;
+    }
+  }
+
+  .university {
+    margin-top: 2rem;
+    font-size: 0.7rem;
+    line-height: 1.2;
+  }
+
+  div.cover-image {
+    display: flex;
+    align-items: center;
+  }
+
+}
+
+section.chapter {
+  background-color: var(--vamain);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  
+  footer {
+    display: none;
+  }
+  header {
+    display: none;
+  }
+
+  h1 {
+    text-transform: uppercase;
+    font-size: 2.7rem;
+    color:white !important;
+    border-bottom: 3px solid var(--vawhite);
+  }
+
+  h2 {
+    text-transform: uppercase;
+    font-size: 2.7rem;
+    color:white !important;
+    border-bottom: 3px solid var(--vawhite);
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  div.cover-image {
+    display: flex;
+    align-items: center;
+  }
+
+}
+
+/* Layout columns section layout */
+
+
+
+section.columns-1 {
+  column-count: 1;
+  padding-right: 25%;
+}
+
+section.columns-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 0;
+}
+
+section.columns-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 0;
+}
+
+section.columns-4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 0;
+}
+
+
+
+/****Titolo di sezione ****/
+section.title-slide h1 {
+  color: var(--vawhite) !important;
+
+}
+
+section.title-slide {
+
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding: 0;
+}
+
+section.title-slide h1 {
+  color: var(--vawhite) !important;
+  font-size: 3.5rem !important;
+  line-height: 4rem;
+  text-align: center;
+  margin: 0;
+  padding: 2rem;
+  background-color: var(--vamain);
+  width: auto;
+  border-radius: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+section.title-slide header {
+  text-align: left;
+}
+
+
+
+/**** all-image slide ****/
+
+section.all-image {
+  h1 {
+    color: var(--vawhite) !important;
+    font-size: 2rem !important;
+    line-height: 2.2rem;
+    text-align: left;
+    margin: 0;
+    padding-left: 3rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: var(--vamain);
+    width:fit-content;
+    border-radius: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 75%;
+    left: 0;
+  }
+
+  h2 {
+    color: var(--vawhite) !important;
+    font-size: 1.2rem !important;
+    line-height: 2rem;
+    text-align: left;
+    margin: 0;
+    padding-left: 3rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: var(--vamain);
+    width:fit-content;
+    border-radius: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 87%;
+    left: 0;
+  }
+  a {
+    color: var(--vawhite) !important;
+    text-decoration: underline;
+  }
+
+  footer {
+    display: none;
+  }
+}
+
+section.all-image::after {
+  display: none;
+}
+
+
+/**** all-image slide ****/
+
+section.all-image {
+  h1 {
+    color: var(--vawhite) !important;
+    font-size: 2rem !important;
+    line-height: 2.2rem;
+    text-align: left;
+    margin: 0;
+    padding-left: 3rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: var(--vamain);
+    width:fit-content;
+    border-radius: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 75%;
+    left: 0;
+  }
+
+  h2 {
+    color: var(--vawhite) !important;
+    font-size: 1.2rem !important;
+    line-height: 2rem;
+    text-align: left;
+    margin: 0;
+    padding-left: 3rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: var(--vamain);
+    width:fit-content;
+    border-radius: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 87%;
+    left: 0;
+  }
+  a {
+    color: var(--vawhite) !important;
+    text-decoration: underline;
+  }
+
+  footer {
+    display: none;
+  }
+}
+
+section.all-image::after {
+  display: none;
+}
+
+/**** all-image-right slide ****/
+
+section.all-image-right {
+  h1 {
+    color: var(--vawhite) !important;
+    font-size: 2rem !important;
+    line-height: 2.2rem;
+    text-align: left;
+    margin: 0;
+    padding-left: 1rem;
+    padding-right: 3rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: var(--vamain);
+    width:fit-content;
+    border-radius: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 75%;
+    right: 0;
+  }
+
+  h2 {
+    color: var(--vawhite) !important;
+    font-size: 1.2rem !important;
+    line-height: 2rem;
+    text-align: left;
+    margin: 0;
+    padding-left: 3rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: var(--vamain);
+    width:fit-content;
+    border-radius: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 87%;
+    left: 0;
+  }
+  a {
+    color: var(--vawhite) !important;
+    text-decoration: underline;
+  }
+
+  footer {
+    display: none;
+  }
+}
+
+section.all-image-right::after {
+  display: none;
+}
+
+
+/**** Slide con testi grandi ****/
+
+section.big-text {
+  h1 {
+    font-size: 2.5rem !important;
+  }
+
+  p {
+    font-size: 1.5rem !important;
+    line-height: 2rem !important;
+  }
+}
+
+/**** table-numbers into code ****/
+
+.table-numbers {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.4rem;
+  font-weight: lighter;
+  line-height: 2rem !important;
+  strong {
+    font-weight: 800;
+  }
+}
+
+.interactive-chart {
+  .vega-embed {
+    font-size:0.5rem;
+  }
+}
+/**** scegli tra image e vega charts ****/
+
+@media print {
+ .interactive-chart {
+    display: none;
+  }
+}
+
+@media screen {
+  .img-chart {
+    display: none;
+  }
+}

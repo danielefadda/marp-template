@@ -1,0 +1,30 @@
+{
+  "name": "marp-template",
+  "version": "1.0.0",
+  "description": "Template autocontenuto per presentazioni Marp con temi personalizzati e integrazione Vega-Lite",
+  "author": "Daniele Fadda",
+  "license": "MIT",
+  "keywords": [
+    "marp",
+    "presentation",
+    "slides",
+    "template",
+    "vega-lite",
+    "visualization"
+  ],
+  "scripts": {
+    "build:html": "marp --html --theme themes/master.scss",
+    "build:pdf": "marp --html --pdf --allow-local-files --theme themes/master.scss",
+    "watch": "marp --html --watch --theme themes/master.scss"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^3.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danielefadda/DVVA_Master.git"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
