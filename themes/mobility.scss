@@ -1,0 +1,58 @@
+/* @theme mobility */
+
+@import 'default';
+
+:root {
+  /* Mappatura dai colori generici (var. --color-*) ai token semantici (semantic.*) */
+  --color-primary: var(--brand-primary); 
+  --color-accent: var(--brand-accent);   
+  --color-black: var(--text-primary);    
+  --color-white: var(--text-inverse);    
+  --color-grey: var(--text-secondary);   
+  --color-grey-light: var(--border-default); 
+
+  /* Inserimento dei token semantici diretti per l'uso */
+  --brand-primary: #348b96;       /* TEAL-500, come definito nei Design Tokens */
+  --brand-accent: #981b40;        /* burgundy-500 */
+  --text-primary: #262a33;        /* black-500 */
+  --text-secondary: #5b566b;      /* grayviolet-700 */
+  --text-inverse: #ffffff;        /* white-500 */
+  --bg-default: #ffffff;          /* white-500 */
+  --bg-alt: #fff1e6;              /* paper-500 */
+  --bg-inverse: #262a33;          /* black-500 */
+  --border-default: #8e8597;      /* grayviolet-400 */
+  --border-strong: #262a33;       /* black-500 */
+
+  /* Rispetto delle impostazioni originali non-colore */
+  font-size: 24px;
+  line-height: 1.4rem;
+}
+
+/* --- Font-face e Import restano invariati --- */
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  src: url('../assets/fonts/IBM_Plex_Sans/IBMPlexSans-VariableFont_wdth,wght.ttf');
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: italic;
+  src: url('../assets/fonts/IBM_Plex_Sans/IBMPlexSans-Italic-VariableFont_wdth,wght.ttf');
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  src: url('../assets/fonts/IBM_Plex_Mono/IBMPlexMono-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../assets/fonts/IBM_Plex_Mono/IBMPlexMono-Bold.ttf');
+}
+
+@import 'base';
