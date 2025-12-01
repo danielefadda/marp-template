@@ -1,49 +1,4 @@
-/* @theme master */
-
-@import 'default';
-@import-theme 'base';
-
-
-
-
-:root {
-  --vamain: #1b1464;
-  --vamain2: #de1f36;
-  --vablack: #000000;
-  --vawhite: #ffffff;
-  --vagrey: #6B6B6B;
-  --valightgrey: #dedede;
-
-  font-size: 24px; /*  font-size: 35px; for slides with bigger fonts or 24 for normal one */
-  line-height: 1.4rem;
-}
-
-
-@font-face {
-  font-family: 'IBM Plex Sans';
-  font-style: normal;
-  src: url('../assets/fonts/IBM_Plex_Sans/IBMPlexSans-VariableFont_wdth,wght.ttf');
-}
-
-@font-face {
-  font-family: 'IBM Plex Sans';
-  font-style: italic;
-  src: url('../assets/fonts/IBM_Plex_Sans/IBMPlexSans-Italic-VariableFont_wdth,wght.ttf');
-}
-
-@font-face {
-  font-family: 'IBM Plex Mono';
-  font-style: normal;
-  src: url('../assets/fonts/IBM_Plex_Mono/IBMPlexMono-Regular.ttf');
-}
-
-@font-face {
-  font-family: 'IBM Plex Mono';
-  font-style: normal;
-  font-weight: 700;
-  src: url('../assets/fonts/IBM_Plex_Mono/IBMPlexMono-Bold.ttf');
-}
-
+/* @theme base */
 
 .img-container {
   display: flex;
@@ -186,9 +141,6 @@ footer {
   position: absolute;
   padding-left: inherit;
   color: var(--vablack);
-  mark {
-    padding: 0.1rem 0 0.1rem 0.3rem;
-  }
 }
 
 footer :link {
