@@ -19,6 +19,25 @@ template/
     └── vega-insert-chart.js  # Utility per chart Vega-Lite
 ```
 
+## 📦 Regola Assets: template vs starter
+
+Nel submodule `template/` (`template/assets/`) vanno solo risorse condivise legate al tema:
+- font del tema
+- logo del footer
+- elementi grafici di brand usati dal tema
+
+Gli asset delle singole presentazioni non vanno nel submodule. Nel repository starter vanno in root:
+
+```text
+assets/
+  images/
+  charts/
+```
+
+Esempi:
+- immagini slide: `assets/images/...`
+- specifiche e fallback chart: `assets/charts/...`
+
 ## 🚀 Utilizzo
 
 ### Metodo Consigliato: usa lo starter
@@ -26,8 +45,15 @@ template/
 Il modo più semplice per iniziare è usare il progetto template completo:
 
 ```bash
-git clone --recurse-submodules https://github.com/danielefadda/marp-slides-starter.git mio-progetto
-cd mio-progetto
+gh repo create PROJECT_slides --template danielefadda/marp-slides-starter --private --clone
+cd PROJECT_slides
+git submodule update --init --recursive
+```
+
+Se crei il repository da GitHub Web con **Use this template**, dopo il clone locale esegui comunque:
+
+```bash
+git submodule update --init --recursive
 ```
 
 ### Metodo Avanzato: importa il template in un progetto tuo
@@ -130,11 +156,11 @@ Aggiungi gli script nel frontmatter:
 
 <div class="interactive-chart" id="my-chart"></div>
 <div class="img-chart">
-  <img src="charts/my-chart-fallback.png" alt="Chart fallback"/>
+  <img src="assets/charts/my-chart-fallback.png" alt="Chart fallback"/>
 </div>
 
 <script>
-  insertChart('my-chart', './charts/my-spec.json', '100%', '450px');
+  insertChart('my-chart', './assets/charts/my-spec.json', '100%', '450px');
 </script>
 ```
 
@@ -173,7 +199,7 @@ Aggiungi gli script nel frontmatter:
 # Nome del Capitolo
 
 <div class="cover-image">
-  <img src="image.png" alt=""/>
+  <img src="assets/images/image.png" alt=""/>
 </div>
 ```
 
