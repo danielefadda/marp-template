@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Marp: Sync themes from themes/",
+      "type": "shell",
+      "command": "node",
+      "args": [
+        "scripts/sync-marp-themes.mjs"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}
