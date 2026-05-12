@@ -2,7 +2,7 @@
 
 Risorse condivise (temi, font, utilities) per creare presentazioni con [Marp](https://marp.app/).
 
-Questo repository è pensato per chi sviluppa o modifica i temi. Per scrivere una presentazione usa [marp-slides-starter](https://github.com/danielefadda/marp-slides-starter).
+Questo repository è pensato per chi sviluppa o modifica i temi. Per scrivere una presentazione crea un nuovo repository dal template [marp-slides-starter](https://github.com/danielefadda/marp-slides-starter).
 
 ## 📁 Contenuto
 
@@ -40,9 +40,9 @@ Esempi:
 
 ## 🚀 Utilizzo
 
-### Metodo Consigliato: usa lo starter
+### Metodo Consigliato: crea un nuovo repository di presentazione dal template starter
 
-Il modo più semplice per iniziare è usare il progetto template completo:
+Il modo più semplice per iniziare è creare un nuovo repository di presentazione a partire dal template starter:
 
 ```bash
 gh repo create PROJECT_slides --template danielefadda/marp-slides-starter --private --clone
