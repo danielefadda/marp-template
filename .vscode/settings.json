@@ -1,0 +1,10 @@
+{
+  "markdown.marp.themes": [
+    "themes/base.scss",
+    "themes/master.scss",
+    "themes/mobility.scss",
+    "themes/alma.scss"
+  ],
+  "markdown.marp.html": "all",
+  "markdown.marp.outlineExtension": true
+}

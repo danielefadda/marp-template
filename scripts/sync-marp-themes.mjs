@@ -56,7 +56,7 @@ function main() {
   }
 
   const themeFiles = collectThemeFiles(themesDir);
-  const themePaths = themeFiles.map((name) => `/template/themes/${name}`);
+  const themePaths = themeFiles.map((name) => `themes/${name}`);
 
   const existingThemes = normalizeThemeList(settings['markdown.marp.themes']);
   const mergedThemes = [...existingThemes];

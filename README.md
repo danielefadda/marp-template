@@ -2,7 +2,7 @@
 
 Risorse condivise (temi, font, utilities) per creare presentazioni con [Marp](https://marp.app/).
 
-**Questo è un modulo da importare.** Per un progetto completo pronto all'uso, vedi [marp-slides-starter](https://github.com/danielefadda/marp-slides-starter).
+Questo repository è pensato per chi sviluppa o modifica i temi. Per scrivere una presentazione usa [marp-slides-starter](https://github.com/danielefadda/marp-slides-starter).
 
 ## 📁 Contenuto
 
@@ -21,7 +21,7 @@ template/
 
 ## 🚀 Utilizzo
 
-### Metodo Consigliato: Usa marp-slides-starter
+### Metodo Consigliato: usa lo starter
 
 Il modo più semplice per iniziare è usare il progetto template completo:
 
@@ -30,7 +30,7 @@ git clone --recurse-submodules https://github.com/danielefadda/marp-slides-start
 cd mio-progetto
 ```
 
-### Metodo Avanzato: Import manuale
+### Metodo Avanzato: importa il template in un progetto tuo
 
 Se vuoi aggiungere questo template a un progetto esistente:
 
@@ -49,18 +49,30 @@ cp -r /path/to/marp-template ./template
 
 ### VS Code Settings
 
-Crea `.vscode/settings.json` nel tuo progetto:
+Crea `.vscode/settings.json` nel progetto in cui lavori sui temi. In questo repository i percorsi sono locali e puntano a `themes/`:
 
 ```json
 {
   "markdown.marp.themes": [
-    "${workspaceFolder}/template/themes/master.scss",
-    "${workspaceFolder}/template/themes/alma.scss"
+    "themes/base.scss",
+    "themes/master.scss",
+    "themes/mobility.scss",
+    "themes/alma.scss"
   ],
   "markdown.marp.html": "all",
   "markdown.marp.outlineExtension": true
 }
 ```
+
+Per tenerli sincronizzati usa il task `Marp: Sync themes from themes/` definito in `.vscode/tasks.json`.
+
+### Workflow consigliato per chi sviluppa temi
+
+1. Apri il repository `template/` come progetto separato.
+2. Modifica i file in `themes/`.
+3. Mantieni la direttiva `@theme` nel file SCSS.
+4. Lancia il task di sync o aggiorna manualmente `.vscode/settings.json`.
+5. Verifica il rendering in anteprima.
 
 ### File .marprc.yml (opzionale)
 
@@ -69,8 +81,8 @@ Per export da CLI:
 ```yaml
 inputDir: .
 themeSet:
-  - template/themes/master.scss
-  - template/themes/alma.scss
+  - themes/master.scss
+  - themes/alma.scss
 html: true
 allowLocalFiles: true
 ```
@@ -212,13 +224,15 @@ section {
 
 ## 🔄 Aggiornamenti
 
-Per aggiornare il template in un progetto che lo usa come submodule:
+Se questo repository viene usato come submodule in uno starter, aggiorna il puntatore dal repository padre solo quando vuoi pubblicare una nuova versione stabile.
 
 ```bash
 git submodule update --remote template
 git add template
 git commit -m "Update template"
 ```
+
+Se invece stai lavorando qui in locale, puoi aggiornare solo questo repository e poi pubblicarlo sul suo remoto.
 
 ## 📚 Risorse
 
