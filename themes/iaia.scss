@@ -1,5 +1,54 @@
-/* @theme base */
+/* @theme iaia */
+
 @import 'default';
+
+:root {
+  --color-primary: #23458b;
+  --color-accent: #23458b;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-grey: #6B6B6B;
+  --color-grey-light: #dedede;
+  --content-safe-top: 140px;
+  --content-safe-bottom: 120px;
+  --title-bg-safe-top: 108px;
+  --title-bg-safe-bottom: 70px;
+  --all-image-bg-safe-top: 108px;
+  --all-image-bg-safe-bottom: 70px;
+  --all-image-right-bg-safe-top: 108px;
+  --all-image-right-bg-safe-bottom: 70px;
+
+  font-size: 24px; /*  font-size: 35px; for slides with bigger fonts or 24 for normal one */
+  line-height: 1.4rem;
+}
+
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  src: url('../assets/fonts/IBM_Plex_Sans/IBMPlexSans-VariableFont_wdth,wght.ttf');
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: italic;
+  src: url('../assets/fonts/IBM_Plex_Sans/IBMPlexSans-Italic-VariableFont_wdth,wght.ttf');
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  src: url('../assets/fonts/IBM_Plex_Mono/IBMPlexMono-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../assets/fonts/IBM_Plex_Mono/IBMPlexMono-Bold.ttf');
+}
+
+
 
 .img-container {
   display: flex;
@@ -42,21 +91,32 @@ hr {
 
 /** Page numbers **/
 section::after {
-  font-size: 1.2rem;
-  color: var(--color-grey);
+  font-size: 1rem;
   position: absolute;
   padding-left: inherit;
+  top:89%;
   left: 0;
+  padding-top: 18px;
   content: attr(data-marpit-pagination) ' / ' attr(data-marpit-pagination-total);
+  left: 1%;
+  bottom: 45px;
+  width: 91%;
+  border-top: 1px solid var(--color-primary);
+  background-color: white;
+  z-index: 5;
+  height: 60px;
 }
 
 /* Main content (section) */
 section {
   margin: 0;
-  padding: 100px 7%;
+  padding: var(--content-safe-top) 5% var(--content-safe-bottom);
   background-size: contain;
   align-content: normal;
+  position: relative;
 }
+
+
 
 /*****************/
 /***** Fonts *****/
@@ -125,28 +185,86 @@ header {
   color: var(--color-white);
   font-size: 0.8rem;
   padding-left: 3rem;
-  padding-right: 3rem;
+  padding-right: 10rem;
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
-  height: 5%;
-  background-color: var(--color-primary);
+  height: 15%;
+  border: 1px solid var(--color-primary);
+  z-index: 2;
+}
+
+header::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 65px;
+  width: 230px;
+  height: 72px;
+  background-image: url('template/assets/img/interreg.jpeg');
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: contain;
+  z-index: 10;
+  pointer-events: none;
+}
+
+header::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 22px;
+  left: 335px;
+  width: 65px;
+  height: 60px;
+  background-image: url('template/assets/img/IAIA_logo.jpg');
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: contain;
+  z-index: 10;
+
 }
 
 /**** Footer ****/
 
 footer {
-  right: 1rem;
+  right: 65px;
+  bottom: 27px;
   left: auto;
   position: absolute;
   padding-left: inherit;
   color: var(--color-black);
+  padding-right: 68px; 
+  white-space: nowrap;  
+  font-size: 15px;
+  color: var(--color-primary);
+  vertical-align: middle;
+  height: 30px;
+  z-index: 10;
+}
+
+footer::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 5px;    /* Regola questa proprietà se vuoi allinearlo verticalmente al testo */
+  right: 0;
+  width: 50px;
+  height: 30px;
+  background-image: url('template/assets/img/IAIA_logo_footer.jpg');
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: contain;
+  z-index: 10;
 }
 
 footer :link {
   color: var(--color-black);
 }
+
+
 
 
 /* Nascondi il numero di pagina nelle slide di sezione */
@@ -191,10 +309,7 @@ section.cover {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2rem;
-  
-  footer {
-    display: none;
-  }
+
 
   h1 {
     text-transform: uppercase;
@@ -325,6 +440,19 @@ section.title-slide {
   padding: 0;
 }
 
+section.title-slide[data-marpit-advanced-background="background"] {
+  background-color: var(--color-white);
+}
+
+section.title-slide[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container] {
+  position: absolute;
+  top: var(--title-bg-safe-top);
+  right: 0;
+  bottom: var(--title-bg-safe-bottom);
+  left: 0;
+  height: auto !important;
+}
+
 section.title-slide h1 {
   color: var(--color-white) !important;
   font-size: 3.5rem !important;
@@ -346,6 +474,19 @@ section.title-slide header {
 
 /**** all-image slide ****/
 
+section.all-image[data-marpit-advanced-background="background"] {
+  background-color: var(--color-white);
+}
+
+section.all-image[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container] {
+  position: absolute;
+  top: var(--all-image-bg-safe-top);
+  right: 0;
+  bottom: var(--all-image-bg-safe-bottom);
+  left: 0;
+  height: auto !important;
+}
+
 section.all-image {
   h1 {
     color: var(--color-white) !important;
@@ -362,7 +503,7 @@ section.all-image {
     border-radius: 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: absolute;
-    top: 75%;
+    top: 68%;
     left: 0;
   }
 
@@ -381,7 +522,7 @@ section.all-image {
     border-radius: 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: absolute;
-    top: 87%;
+    top: 80%;
     left: 0;
   }
   a {
@@ -389,9 +530,6 @@ section.all-image {
     text-decoration: underline;
   }
 
-  footer {
-    display: none;
-  }
 }
 
 section.all-image::after {
@@ -417,7 +555,7 @@ section.all-image {
     border-radius: 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: absolute;
-    top: 75%;
+    top: 60%;
     left: 0;
   }
 
@@ -436,7 +574,7 @@ section.all-image {
     border-radius: 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: absolute;
-    top: 87%;
+    top: 72%;
     left: 0;
   }
   a {
@@ -444,9 +582,6 @@ section.all-image {
     text-decoration: underline;
   }
 
-  footer {
-    display: none;
-  }
 }
 
 section.all-image::after {
@@ -454,6 +589,19 @@ section.all-image::after {
 }
 
 /**** all-image-right slide ****/
+
+section.all-image-right[data-marpit-advanced-background="background"] {
+  background-color: var(--color-white);
+}
+
+section.all-image-right[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container] {
+  position: absolute;
+  top: var(--all-image-right-bg-safe-top);
+  right: 0;
+  bottom: var(--all-image-right-bg-safe-bottom);
+  left: 0;
+  height: auto !important;
+}
 
 section.all-image-right {
   h1 {
@@ -471,7 +619,7 @@ section.all-image-right {
     border-radius: 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: absolute;
-    top: 75%;
+    top: 60%;
     right: 0;
   }
 
@@ -490,7 +638,7 @@ section.all-image-right {
     border-radius: 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: absolute;
-    top: 87%;
+    top: 72%;
     left: 0;
   }
   a {
@@ -498,9 +646,7 @@ section.all-image-right {
     text-decoration: underline;
   }
 
-  footer {
-    display: none;
-  }
+
 }
 
 section.all-image-right::after {

@@ -38,8 +38,8 @@ function insertChart(chartId, schemaUrl, width, height) {
             return;
         }
 
-        // Create Vega chart element
-        const chart = document.createElement('vegachart');
+        // Use a standard block container for predictable sizing and pointer mapping.
+        const chart = document.createElement('div');
         chart.style.width = width;
         chart.style.height = height;
         chart.setAttribute('schema-url', schemaUrl);
@@ -54,7 +54,8 @@ function insertChart(chartId, schemaUrl, width, height) {
                 .then(schema => {
                     vegaEmbed(chart, schema, { 
                         'actions': false,
-                        'renderer': 'canvas'
+                        // SVG is more reliable than canvas inside Marp's scaled slide viewport.
+                        'renderer': 'svg'
                     });
                 })
                 .catch(error => {
@@ -91,7 +92,8 @@ function insertChartFromSpec(chartId, spec, width, height) {
         setTimeout(() => {
             vegaEmbed(chart, spec, { 
                 'actions': false,
-                'renderer': 'canvas'
+                // SVG is more reliable than canvas inside Marp's scaled slide viewport.
+                'renderer': 'svg'
             });
         }, 250);
     });

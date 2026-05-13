@@ -3,7 +3,8 @@
     "themes/base.scss",
     "themes/master.scss",
     "themes/mobility.scss",
-    "themes/alma.scss"
+    "themes/alma.scss",
+    "themes/iaia.scss"
   ],
   "markdown.marp.html": "all",
   "markdown.marp.outlineExtension": true
